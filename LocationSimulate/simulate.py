@@ -29,11 +29,10 @@ def intermediate_points(sourceLat,sourceLon,desLat,desLon,speed):
             Newlocation = geolocator.reverse(f"{point[0]}, {point[1]}")
             if oldlocation != Newlocation.address:
 # Print the address
-                print(f"user reached {Newlocation.address}")
+                print(f"user is at {Newlocation.address}")
                 oldlocation=Newlocation.address
         except:
             print(f'location not found for the current coordinates: {point}')
         driver=BuiltIn().get_library_instance('AppiumLibrary')
         driver.set_location(point[0],point[1])
     print(f"user reached the destination: {Newlocation.address}")
-intermediate_points('17.663702194239555', '82.61622655240457','17.652175430830592', '82.64533666707842',100)

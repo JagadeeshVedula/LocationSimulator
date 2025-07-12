@@ -1,1 +1,1 @@
-from simulate import intermediate_points
+import LocationSimulate.simulate
